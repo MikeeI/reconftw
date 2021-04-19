@@ -786,6 +786,8 @@ function nuclei_check(){
 			printf "${yellow}\n\n Running : Nuclei Takeover${reset}\n\n"
 			cat webs/webs.txt | nuclei -silent -H "${HEADER}" -t ~/nuclei-templates/network/ -o nuclei_output/takeover.txt
 			printf "${yellow}\n\n Running : Nuclei Network${reset}\n\n"
+			cat webs/webs.txt | nuclei -silent -H "${HEADER}" -t ~/nuclei-templates/workflows/ -o nuclei_output/workflows.txt
+			printf "${yellow}\n\n Running : Nuclei Workflows${reset}\n\n"
 			cat webs/webs.txt | nuclei -silent -H "${HEADER}" -t ~/nuclei-templates/exposed-tokens/ -o nuclei_output/tokens.txt
 			printf "${yellow}\n\n Running : Nuclei Exposures${reset}\n\n"
 			cat webs/webs.txt | nuclei -silent -H "${HEADER}" -t ~/nuclei-templates/exposures/ -o nuclei_output/exposures.txt
