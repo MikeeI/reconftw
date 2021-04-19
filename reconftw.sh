@@ -780,6 +780,12 @@ function nuclei_check(){
 			printf "${yellow}\n Running : Nuclei Technologies${reset}\n\n"
 			cat webs/webs.txt | nuclei -silent -H "${HEADER}" -t ~/nuclei-templates/technologies/ -o nuclei_output/technologies.txt
 			printf "${yellow}\n\n Running : Nuclei Tokens${reset}\n\n"
+			cat webs/webs.txt | nuclei -silent -H "${HEADER}" -t ~/nuclei-templates/dns/ -o nuclei_output/dns.txt
+			printf "${yellow}\n\n Running : Nuclei DNS${reset}\n\n"
+			cat webs/webs.txt | nuclei -silent -H "${HEADER}" -t ~/nuclei-templates/takeover/ -o nuclei_output/takeover.txt
+			printf "${yellow}\n\n Running : Nuclei Takeover${reset}\n\n"
+			cat webs/webs.txt | nuclei -silent -H "${HEADER}" -t ~/nuclei-templates/network/ -o nuclei_output/takeover.txt
+			printf "${yellow}\n\n Running : Nuclei Network${reset}\n\n"
 			cat webs/webs.txt | nuclei -silent -H "${HEADER}" -t ~/nuclei-templates/exposed-tokens/ -o nuclei_output/tokens.txt
 			printf "${yellow}\n\n Running : Nuclei Exposures${reset}\n\n"
 			cat webs/webs.txt | nuclei -silent -H "${HEADER}" -t ~/nuclei-templates/exposures/ -o nuclei_output/exposures.txt
